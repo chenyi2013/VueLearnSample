@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="app">
+      <span>Message:{{msg}}</span><br/>
+      <span v-once>This will never change:{{msg}}</span><br/>
+      <div v-html="rawHtml">{{msg}}</div>
+      <a v-bind:href="url">click me</a><br/>
+      <button v-bind:disabled="isVisible">Button</button><br/>
+      <span>{{number+1}}</span><br/>
+      <span>{{ok?'YES':'NO'}}</span><br/>
+      <div v-bind:id="'list-'+id | formatId">
+        {{msg}}
+      </div>
+      <p v-if="seen">Now you see me</p>
+      <a v-on:click="doSomething"></a>
+      <form v-on:submit.prevent="onSumbit" method="get" action="www.baidu.com"/>
+        <button type="submit">submit</button>
+      </form>
+      <div v-bind:id="rawId | formatId">Hello world</div>
+      <a :href="url">点我呀</a><br/>
+      <a :href="url" @click="doSomething">有种点我呀</a>
+    </div>
+
+  </body>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="js/template_syntax.js"></script>
+</html>
