@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    .active {
+      background-color:#ff0000;
+      color: #ffff00;
+    }
+    .text-danger{
+      color: #ffffff;
+      background: #00ff00
+    }
+    </style>
+  </head>
+  <body>
+    <div id="app" >
+      <p v-bind:class="{ active: isActive ,'text-danger':hasError}" >{{msg}}</p>
+      <p v-bind:class="classObject"> {{msg}}</p>
+      <p v-bind:class="[activeClass,errorClass]"> {{msg}}</p>
+      <p v-bind:class="[isActive ? activeClass : '', errorClass]">{{msg}}</p>
+      <p v-bind:style="styleObject">{{msg}}</p>
+      <p v-bind:style="[styleObject,styleObject2]">{{msg}}</p>
+      <my-component  v-bind:todo="msg" v-bind:name="msg"/>
+    </div>
+  </body>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="js/classBindStyle.js"></script>
+</html>
